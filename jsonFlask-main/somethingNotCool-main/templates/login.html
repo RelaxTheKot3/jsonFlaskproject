@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>login</title>
+</head>
+<body style="background-color: #fff1e6; ">
+    <main> 
+        
+            <div class="col-md-4  border" style="margin: 3% 33%; line-height: 3; border-radius: 15px; background-color: #f1faee;" >
+                <form action="/connect" method="POST" style="margin-top: 1rem;">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="your username.." id="inffff" aria-label="Recipient's username" aria-describedby="button-addon2" name="username">
+                        <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" >submit</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    
+    </main>
+    <script>
+        window.addEventListener('load', () => {
+            document.getElementById('inffff').focus()
+        })
+    </script>
+</body>
+</html>

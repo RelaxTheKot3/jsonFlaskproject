@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        #sms::-webkit-scrollbar-track
+        {
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #sms::-webkit-scrollbar
+        {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        #sms::-webkit-scrollbar-thumb
+        {
+            border-radius: 10px;
+            background-color: silver;
+        }
+
+        #me, #bot {
+            border-radius: 23px;
+        }
+
+        #me {
+            
+            
+            background-color: #a8dadc;
+            justify-content: flex-end;
+        }
+        #bot {
+            background-color: #457b9d;
+            
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>chat</title>
+</head>
+<body style="background-color: #fff1e6; ">
+    <main> 
+        
+            <div class="col-md-4  border" style="margin: 3% 33%; line-height: 3; border-radius: 15px; background-color: #f1faee;" >
+                <div class="nav justify-content-center d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-light border-bottom shadow-sm" style="margin-top: 10px; border-radius: 13px;background-color: #edf6f9;">
+                        
+                        <form style="position: absolute; left: 10%;" >
+                            <small><span style="color: royalblue;">{{user_len}} in chat</span></small>
+                        </form>
+
+                        <h3 id="status" name = 'status' class="p-2 text-dark" >{{username}}</h3> 
+                        
+                        <form style="position: absolute; right: 10%;" action="/login" method="POST">
+                            <button  class="btn btn-outline-primary" type="submit" >🕵🏿‍♀️</button>
+                        </form>
+                
+                </div>
+                <div id = 'sms' style="overflow: auto;max-height: 550px;">
+
+                    {% block body %} {% endblock %}
+
+                </div>
+
+                <div style="padding-bottom: 10px; padding-top: 100px;">
+                <form action="/" method="POST">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="your message..." aria-label="Recipient's username" aria-describedby="button-addon2" name = 'content' id = 'smsinput'>
+                        <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">send</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+
+
+        </div>
+    
+    </main>
+    <script>
+        
+
+
+        let userStatus = 'me'        
+
+        // window.onload = () => {
+        //     userStatus = prompt('your name')
+        //     document.getElementById('status').innerHTML = `${userStatus}`
+        // }
+
+        window.addEventListener('load', function(){
+            var objDiv = document.getElementById("sms");
+            objDiv.scrollTop = objDiv.scrollHeight;
+            // userStatus = prompt('your name')
+            // document.getElementById('status').innerHTML = `your status ${userStatus}`
+            
+            document.getElementById('smsinput').focus()
+            
+            document.getElementById('smsinput').addEventListener("keyup", (event) => {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    
+                    document.getElementById("button-addon2").click();
+                }
+                // if (event.keyCode === 17) {
+                //     event.preventDefault();
+                //     document.getElementById("status").click();
+                // }
+            });
+            
+            
+
+
+        //     document.getElementById('status').onclick = () => {
+        //         // userStatus = prompt()
+        //         userStatus == 'me' ? (userStatus = 'bot'):(userStatus = 'me')
+
+
+        //         // document.getElementById("status").setAttribute("name",userStatus)
+        //         document.getElementById('status').innerHTML = `your status ${userStatus}`
+        //         // alert(userStatus)
+        // }
+
+            document.getElementById('button-addon2').onclick = () => {
+                if (document.getElementById('smsinput').value == '' ) return undefined
+                // alert (`status ${userStatus} sms ${document.getElementById('smsinput').value}`)
+            //     if (userStatus == 'me'){
+            //         document.getElementById('sms').innerHTML += `<div id= "me" class="justify-content-end d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm"><h5 class="p-2 text-dark">${document.getElementById('smsinput').value}</h5></div>`
+            //     } else {
+            //         document.getElementById('sms').innerHTML += `<div id= "bot" class=" d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm"><h5 class="p-2 text-dark">${document.getElementById('smsinput').value}</h5></div>`
+
+            //     }
+            //     document.getElementById('smsinput').value = ''
+            //     document.getElementById('smsinput').focus()
+            }
+            
+        })
+
+
+
+
+    </script>
+    <!-- <script src="./index.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block body %} 
+
+
+                <!-- <div id = 'bot' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm">
+                    <h5 class="p-2 text-dark">hello!!</h5>
+                </div>
+
+
+                
+
+            
+                <div id= 'me' class="justify-content-end d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm">
+                    <h5 class="p-2 text-dark">hi)</h5>
+                </div> -->
+                
+
+                {% for sm in sms.values() %}
+
+                    {% if sm.username == mama %}
+                   
+                        <div id = 'me' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm">
+                        <h5 class="p-2 text-dark"> {{ sm.content }} <small><small>{{ sm.username }}</small></small></h5>
+                        </div>
+                    {% else %}
+                        
+                        <div id = 'bot' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm">
+                        <h5 class="p-2 text-dark"><small><small>{{ sm.username }}</small></small> {{ sm.content }} </h5>
+                        </div>
+
+                    {% endif %}
+                    
+                {% endfor %}
+
+{% endblock %}
