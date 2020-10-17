@@ -1,38 +1,4 @@
 {
-    "users": {
-        "26.41.64.90": "sad",
-        "192.168.118.132": "dan1kfed0r0v"
-    },
-    "sms": {
-        "0": {
-            "userIP": "26.41.64.90",
-            "content": "frrfgg",
-            "username": "sad",
-            "date_created": "<built-in method utcnow of type object at 0x00007FFA4CD45650>"
-        },
-        "1": {
-            "userIP": "26.41.64.90",
-            "content": "asd",
-            "username": "sad",
-            "date_created": "<built-in method utcnow of type object at 0x00007FFA4CD45650>"
-        },
-        "2": {
-            "userIP": "192.168.118.132",
-            "content": "hello",
-            "username": "dan1kfed0r0v",
-            "date_created": "<built-in method utcnow of type object at 0x5FC773B0>"
-        },
-        "3": {
-            "userIP": "192.168.118.132",
-            "content": "bro",
-            "username": "dan1kfed0r0v",
-            "date_created": "<built-in method utcnow of type object at 0x5FC773B0>"
-        },
-        "4": {
-            "userIP": "192.168.118.132",
-            "content": "help",
-            "username": "dan1kfed0r0v",
-            "date_created": "<built-in method utcnow of type object at 0x5FC773B0>"
-        }
-    }
+    "users": {},
+    "sms": {}
 }
