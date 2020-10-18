@@ -19,12 +19,12 @@
                 </div> -->
                 
 
-                {% for sm in sms.values() %}
+                {% for j,sm in sms.items() %}
 
                     {% if sm.username == mama %}
                    
                         <div id = 'me' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm">
-                        <h5 class="p-2 text-dark"> {{ sm.content }} <small><small>{{ sm.username }}</small></small></h5>
+                        <h5 class="p-2 text-dark"> {{ sm.content }} <small><small>{{ sm.username }}</small><form id = 'deleteFOrm{{j}}' action="/delete" method="GET" style="display: inline;"><input type="text" style="display:none" value="{{j}}" name = 'deleteFOrm{{j}}'><a href="#" onclick="document.getElementById('deleteFOrm{{j}}').submit();">❌</a></form></small></h5>
                         </div>
                     {% else %}
                         

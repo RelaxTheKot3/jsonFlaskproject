@@ -1,4 +1,14 @@
 {
-    "users": {},
-    "sms": {}
+    "users": {
+        "danikfedorov41@gmail.comdanikfedorov41@gmail.com": "danmei",
+        "123123": "123"
+    },
+    "sms": {
+        "5": {
+            "userIP": "danikfedorov41@gmail.comdanikfedorov41@gmail.com",
+            "content": "sd",
+            "username": "danmei",
+            "date_created": "<built-in method utcnow of type object at 0x614473B0>"
+        }
+    }
 }

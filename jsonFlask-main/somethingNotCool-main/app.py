@@ -40,6 +40,16 @@ except:
         db = json.load(readDB)
     print('created')
 
+@app.route('/delete', methods = ['POST', 'GET'])
+def delete():
+    # if request.method == 'POST':
+    smisol = request.args.to_dict()   # request.args[f'{list(smisol)[0]}']
+    db['sms'].pop(f'{request.args[f"{list(smisol)[0]}"]}')
+    commit(db)
+
+
+    return redirect('/')
+
 @app.route('/logout', methods = ['POST', 'GET'])
 def logout():
     try:
@@ -55,6 +65,7 @@ def register():
         if request.form['login'] == '' or request.form['password'] == '': return render_template('register.html')
         with open('session.txt', 'w') as sessionfile:
             sessionfile.write(f'{request.form["login"]} {request.form["password"]}')
+        if f'{request.form["login"]}{request.form["password"]}' in db['users'] : return redirect('/connect') 
         return render_template('login.html')    
 
     else:
@@ -132,8 +143,11 @@ def index():
         if sms_content == '' or len(sms_content) > 40: return redirect('/')
         if sms_user == '' : return redirect('/')
 
-
-        db['sms'][f'{len(db["sms"])}'] = {'userIP': f'{session[0]}{session[1]}','content': sms_content, 'username': f'{db["users"][f"{session[0]}{session[1]}"]}', 'date_created': f'{datetime.utcnow}'}
+        if len(db['sms']) != 0:
+            smert = list(db['sms'])[len(db['sms'])-1]
+        else:
+            smert = -1
+        db['sms'][f'{int(smert) + 1}'] = {'userIP': f'{session[0]}{session[1]}','content': sms_content, 'username': f'{db["users"][f"{session[0]}{session[1]}"]}', 'date_created': f'{datetime.utcnow}'}
         commit(db)
         
         return redirect('/')
