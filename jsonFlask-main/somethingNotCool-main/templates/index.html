@@ -24,7 +24,7 @@
                     {% if sm.username == mama %}
                    
                         <div id = 'me' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm">
-                        <h5 class="p-2 text-dark"> {{ sm.content }} <small><small>{{ sm.username }}</small><form id = 'deleteFOrm{{j}}' action="/delete" method="GET" style="display: inline;"><input type="text" style="display:none" value="{{j}}" name = 'deleteFOrm{{j}}'><a href="#" onclick="document.getElementById('deleteFOrm{{j}}').submit();">❌</a></form></small></h5>
+                        <h5 class="p-2 text-dark"> {{ sm.content }} <small><small>{{ sm.username }}</small><form id = 'deleteFOrm{{j}}' action="/delete" method="GET" style="display: inline;"><input type="text" style="display:none" value="{{j}}" name = 'deleteFOrm{{j}}'><small><a style="text-decoration: none;" href="#" onclick="document.getElementById('deleteFOrm{{j}}').submit();">    ❌</a></small></form></small></h5>
                         </div>
                     {% else %}
                         

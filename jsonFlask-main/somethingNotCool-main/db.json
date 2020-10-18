@@ -1,13 +1,25 @@
 {
     "users": {
-        "danikfedorov41@gmail.comdanikfedorov41@gmail.com": "danmei",
-        "123123": "123"
+        "danikfedorov41@gmail.comdanikfedorov41@gmail.com": "daniel",
+        "mamamama": "dada"
     },
     "sms": {
-        "5": {
+        "0": {
+            "userIP": "mamamama",
+            "content": "send",
+            "username": "dada",
+            "date_created": "<built-in method utcnow of type object at 0x614473B0>"
+        },
+        "1": {
+            "userIP": "mamamama",
+            "content": "nudes",
+            "username": "dada",
+            "date_created": "<built-in method utcnow of type object at 0x614473B0>"
+        },
+        "2": {
             "userIP": "danikfedorov41@gmail.comdanikfedorov41@gmail.com",
-            "content": "sd",
-            "username": "danmei",
+            "content": "da",
+            "username": "daniel",
             "date_created": "<built-in method utcnow of type object at 0x614473B0>"
         }
     }
