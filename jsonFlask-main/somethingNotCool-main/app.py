@@ -9,7 +9,6 @@ import json,socket,os
 
 app = Flask(__name__)
 
-asdasdaddas
 
 
 def commit(db):
