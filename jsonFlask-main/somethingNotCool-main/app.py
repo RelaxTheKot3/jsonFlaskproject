@@ -4,7 +4,6 @@ from flask import (
     request, 
     redirect
     )
-from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import json,socket,os
 
