@@ -4,10 +4,12 @@ from flask import (
     request, 
     redirect
     )
+    
 from datetime import datetime
 import json,socket,os
 
 app = Flask(__name__)
+
 
 
 
@@ -116,7 +118,7 @@ def connect():
         sms = db['sms']
         user = db['users']
         
-        return render_template('index.html', sms = sms, mama = user[f'{session[0]}{session[1]}'], username = user[f'{session[0]}{session[1]}'],  user_len = len(db['users']))
+        return render_template('index.html', sms = sms, mama = user[f'{session[0]}{session[1]}'], username = user[f'{session[0]}{session[1]}'],  user_len = len(db['users']), suzers = db['users'])
 
 
 @app.route('/', methods = ['POST', 'GET'])
@@ -163,7 +165,7 @@ def index():
     else:
         sms = db['sms']
         user = db['users']
-        return render_template('index.html', sms = sms, mama = user[f'{session[0]}{session[1]}'], username = user[f'{session[0]}{session[1]}'], user_len = len(db['users']))
+        return render_template('index.html', sms = sms, mama = user[f'{session[0]}{session[1]}'], username = user[f'{session[0]}{session[1]}'], user_len = len(db['users']), suzers = db['users'])
         
     
 

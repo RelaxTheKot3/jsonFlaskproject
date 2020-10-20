@@ -21,14 +21,16 @@
 
                 {% for j,sm in sms.items() %}
 
+                    
+
                     {% if sm.username == mama %}
                    
-                        <div id = 'me' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm">
+                        <div id = 'me' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm" style="border-bottom-right-radius: 5px ;">
                         <h5 class="p-2 text-dark"> {{ sm.content }} <small><small>{{ sm.username }}</small><form id = 'deleteFOrm{{j}}' action="/delete" method="GET" style="display: inline;"><input type="text" style="display:none" value="{{j}}" name = 'deleteFOrm{{j}}'><small><a style="text-decoration: none;" href="#" onclick="document.getElementById('deleteFOrm{{j}}').submit();">    ❌</a></small></form></small></h5>
                         </div>
                     {% else %}
                         
-                        <div id = 'bot' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm">
+                        <div id = 'bot' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm" style="border-bottom-left-radius: 5px ;">
                         <h5 class="p-2 text-dark"><small><small>{{ sm.username }}</small></small> {{ sm.content }} </h5>
                         </div>
 
@@ -36,4 +38,29 @@
                     
                 {% endfor %}
 
+
+              
+                        
+                
+                
+                    
+                
+                
+
 {% endblock %}
+
+{% block usernames %} 
+        {% for i in suzers.values() %}
+        {% if i == mama %}
+        <div id = 'me' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm" style="background-color: #a8dadc;">
+            <h5 class="p-2 text-dark">{{ i }}  <small><span style="color: teal;">you</span></small></h5>
+        </div>
+        {% else %}
+        <div id = 'bot' class="d-flex p-2 px-md-4 mb-3 border-bottom shadow-sm" style="background-color: #73a7a8;">
+        <h5 class="p-2 text-dark">{{ i }}  </h5>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+{% endblock %}
+                        

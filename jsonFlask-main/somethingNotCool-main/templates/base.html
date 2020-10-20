@@ -4,6 +4,10 @@
 
     <style>
         
+        #sms {
+            padding-right: 4px;
+        }
+
         #sms::-webkit-scrollbar-track
         {
             border-radius: 10px;
@@ -12,9 +16,11 @@
 
         #sms::-webkit-scrollbar
         {
-            width: 12px;
+            width: 5px;
             background-color: #F5F5F5;
         }
+       
+        
 
         #sms::-webkit-scrollbar-thumb
         {
@@ -48,18 +54,16 @@
             <form style="position: absolute; right: 10%;" action="/logout" method="GET">
                 <button  class="btn btn-outline-primary" type="submit" >🚪</button>
             </form>
-            <div class="col-md-4  border" style="margin: 3% 33%; line-height: 3; border-radius: 15px; background-color: #f1faee;" >
+            <div class="col-md-4  border" style="margin: 3% 25%; line-height: 3; border-radius: 15px; background-color: #f1faee;" >
                 <div class="nav justify-content-center d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-light border-bottom shadow-sm" style="margin-top: 10px; border-radius: 13px;background-color: #edf6f9;">
                         
                         <form style="position: absolute; left: 10%;" >
                             <small><span style="color: royalblue;">{{user_len}} in chat</span></small>
                         </form>
 
-                        <h3 id="status" name = 'status' class="p-2 text-dark" >{{username}}</h3> 
+                        <h3 id="status" name = 'status' class="p-2 text-dark" >🏠</h3> 
                         
-                        <form style="position: absolute; right: 10%;" action="/login" method="POST">
-                            <button  class="btn btn-outline-primary" type="submit" >🕵🏿‍♀️</button>
-                        </form>
+                        
                 
                 </div>
                 <div id = 'sms' style="overflow: auto;max-height: 550px;">
@@ -81,6 +85,30 @@
 
 
         </div>
+
+        <div class="col-md-2  border" style="line-height: 2; border-radius: 15px; background-color: #f1faee; position: absolute; right: 20%; top: 10%;" >
+            <div class="nav justify-content-center d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-light border-bottom shadow-sm" style="margin-top: 10px; border-radius: 13px;background-color: #edf6f9;">
+                    
+
+                    <h5 id="status" name = 'status' class="p-2 text-dark" >{{username}}</h5> 
+                    <form style="position: absolute; right: 10%;" action="/login" method="POST">
+                        <button  class="btn btn-outline-primary" type="submit" >🕵🏿‍♀️</button>
+                    </form>
+                
+            
+            </div>
+            <div id = 'sms' style="overflow: auto;max-height: 365px;">
+
+                {% block usernames %} {% endblock %}
+
+            </div>
+
+            <div style="padding-bottom: 10px; padding-top: 10px;">
+                
+            </div>
+
+
+    </div>
     
     </main>
     <script>
