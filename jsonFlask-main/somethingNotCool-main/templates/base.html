@@ -51,6 +51,7 @@
 </head>
 <body style="background-color: #fff1e6; ">
     <main> 
+
             <form style="position: absolute; right: 10%;" action="/logout" method="GET">
                 <button  class="btn btn-outline-primary" type="submit" >🚪</button>
             </form>
@@ -63,6 +64,10 @@
 
                         <h3 id="status" name = 'status' class="p-2 text-dark" >🏠</h3> 
                         
+                        <form style="position: absolute; right: 10%;" >
+                        <button  class="btn btn-outline-primary" type="button" id = 'inputButton'>🔍</button>
+                        <input type="text" id = 'smsSearch' style='height: 30px; width: 150px;display: none;'>
+                        </form>
                         
                 
                 </div>
@@ -72,7 +77,7 @@
 
                 </div>
 
-                <div style="padding-bottom: 10px; padding-top: 100px;">
+                <div style="padding-bottom: 10px; padding-top: 10px;">
                 <form action="/" method="POST">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="your message..." aria-label="Recipient's username" aria-describedby="button-addon2" name = 'content' id = 'smsinput'>
@@ -143,7 +148,31 @@
             });
             
             
+            searchFunc = () => {
+                
+                if (document.getElementById('smsSearch') == ''){
+                    for (let i = 0 ; i < document.getElementById('sms').getElementsByTagName('h5').length; i+=1) {
+                        document.getElementById('sms').getElementsByTagName('div')[i].style.display = 'flex'
 
+                }
+                } else {
+                    for (let i = 0 ; i < document.getElementById('sms').getElementsByTagName('h5').length; i+=1) {
+                        if (!document.getElementById('sms').getElementsByTagName('h5')[i].innerText.includes(document.getElementById('smsSearch').value)){
+                            document.getElementById('sms').getElementsByTagName('div')[i].style.display = 'none'
+                        } else {
+                            document.getElementById('sms').getElementsByTagName('div')[i].style.display = 'flex'
+                        }
+                    }
+                }
+            }
+
+
+            document.getElementById('inputButton').onclick = () => {
+                if (document.getElementById('smsSearch').style.display == 'none') return document.getElementById('smsSearch').style.display = 'inline'
+                document.getElementById('smsSearch').style.display = 'none'
+            }
+
+            document.getElementById('smsSearch').oninput = searchFunc
 
         //     document.getElementById('status').onclick = () => {
         //         // userStatus = prompt()

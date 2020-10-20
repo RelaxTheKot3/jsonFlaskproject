@@ -1,0 +1,38 @@
+{
+    "users": {
+        "danikdanik": "daniel",
+        "xzzzZZZxzczxc": "czccc"
+    },
+    "sms": {
+        "0": {
+            "userIP": "danikdanik",
+            "content": "\nhi bri",
+            "username": "daniel",
+            "date_created": "<built-in method utcnow of type object at 0x92ab80>"
+        },
+        "1": {
+            "userIP": "danikdanik",
+            "content": "\nhi bro",
+            "username": "daniel",
+            "date_created": "<built-in method utcnow of type object at 0x92ab80>"
+        },
+        "2": {
+            "userIP": "xzzzZZZxzczxc",
+            "content": "danie",
+            "username": "czccc",
+            "date_created": "<built-in method utcnow of type object at 0x92ab80>"
+        },
+        "3": {
+            "userIP": "xzzzZZZxzczxc",
+            "content": "bro",
+            "username": "czccc",
+            "date_created": "<built-in method utcnow of type object at 0x92ab80>"
+        },
+        "4": {
+            "userIP": "xzzzZZZxzczxc",
+            "content": "furrry",
+            "username": "czccc",
+            "date_created": "<built-in method utcnow of type object at 0x92ab80>"
+        }
+    }
+}
