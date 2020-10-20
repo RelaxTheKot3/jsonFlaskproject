@@ -168,7 +168,10 @@
 
 
             document.getElementById('inputButton').onclick = () => {
-                if (document.getElementById('smsSearch').style.display == 'none') return document.getElementById('smsSearch').style.display = 'inline'
+                if (document.getElementById('smsSearch').style.display == 'none') {
+                    document.getElementById('smsSearch').style.display = 'inline'
+                    return document.getElementById('smsSearch').focus()
+                }
                 document.getElementById('smsSearch').style.display = 'none'
             }
 

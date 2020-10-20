@@ -154,7 +154,7 @@ def index():
             smert = list(db['sms'])[len(db['sms'])-1]
         else:
             smert = -1
-        db['sms'][f'{int(smert) + 1}'] = {'userIP': f'{session[0]}{session[1]}','content': sms_content, 'username': f'{db["users"][f"{session[0]}{session[1]}"]}', 'date_created': f'{datetime.utcnow}'}
+        db['sms'][f'{int(smert) + 1}'] = {'userIP': f'{session[0]}{session[1]}','content': sms_content, 'username': f'{db["users"][f"{session[0]}{session[1]}"]}', 'date_created': f'{datetime.utcnow()}'}
         commit(db)
         
         return redirect('/')
