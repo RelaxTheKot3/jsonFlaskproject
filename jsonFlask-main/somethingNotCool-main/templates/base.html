@@ -87,6 +87,7 @@
                         </div>
                     </div>
                 </form>
+                <small id = 'spanInput' style="display: none;justify-content: flex-end;"><small><span><p id = 'pInput'>hi</p></span></small></small>
                 </div>
 
 
@@ -128,15 +129,37 @@
         //     document.getElementById('status').innerHTML = `${userStatus}`
         // }
 
-        window.addEventListener('load', function(){
+        window.addEventListener('load', function(){ 
             var objDiv = document.getElementById("sms");
             objDiv.scrollTop = objDiv.scrollHeight;
             // userStatus = prompt('your name')
             // document.getElementById('status').innerHTML = `your status ${userStatus}`
             
+            document.getElementById('smsinput').oninput = () => {
+                if ((200 - document.getElementById('smsinput').value.length) <= 15){
+
+                    if ((200 - document.getElementById('smsinput').value.length) < 0){
+                        document.getElementById('pInput').innerHTML = `${200 - document.getElementById('smsinput').value.length}`
+                        document.getElementById('pInput').style.color = 'red'
+                    } else {
+                        document.getElementById('pInput').innerHTML = `${200 - document.getElementById('smsinput').value.length}`
+                        document.getElementById('pInput').style.color = 'black'
+                    }
+
+
+                    document.getElementById('spanInput').style.display = 'flex'
+                    
+                    
+                } else {
+                    document.getElementById('spanInput').style.display = 'none'
+                }
+            }
+
             document.getElementById('smsinput').focus()
             
             document.getElementById('smsinput').addEventListener("keyup", (event) => {
+
+
                 if (event.keyCode === 13) {
                     event.preventDefault();
                     
