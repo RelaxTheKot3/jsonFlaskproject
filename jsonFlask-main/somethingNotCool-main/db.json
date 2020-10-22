@@ -1,0 +1,38 @@
+{
+    "users": {
+        "dsadas": "d",
+        "dada": "nikita"
+    },
+    "sms": {
+        "1": {
+            "userIP": "dsadas",
+            "content": "net",
+            "username": "d",
+            "date_created": "2020-10-22 09:18:02.608160"
+        },
+        "2": {
+            "userIP": "dsadas",
+            "content": "daniel",
+            "username": "d",
+            "date_created": "2020-10-22 09:51:30.364561"
+        },
+        "3": {
+            "userIP": "dsadas",
+            "content": "\nkto ja",
+            "username": "d",
+            "date_created": "2020-10-22 09:51:32.924050"
+        },
+        "4": {
+            "userIP": "dada",
+            "content": "\nkto ti",
+            "username": "nikita",
+            "date_created": "2020-10-22 09:51:49.057424"
+        },
+        "5": {
+            "userIP": "dada",
+            "content": "loh",
+            "username": "nikita",
+            "date_created": "2020-10-22 09:51:50.085907"
+        }
+    }
+}

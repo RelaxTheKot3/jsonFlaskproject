@@ -140,15 +140,15 @@ def index():
         
         if sms_content == '' or sms_user == '': return redirect('/')
 
-        spaces = 0
-        for i in sms_content:
-            if i == ' ':
-                spaces +=1
+        # spaces = 0
+        # for i in sms_content:
+        #     if i == ' ':
+        #         spaces +=1
 
-        if ' ' not in sms_content and len(sms_content) > 52 or spaces != len(sms_content) // 53:
-            for i in range(0,len(sms_content), 53):
-                spam = sms_content[i::]
-                sms_content = sms_content[:i:] + '\n' + spam
+        # if ' ' not in sms_content and len(sms_content) > 52 or spaces != len(sms_content) // 53:
+        #     for i in range(0,len(sms_content), 53):
+        #         spam = sms_content[i::]
+        #         sms_content = sms_content[:i:] + '\n' + spam
 
         if len(db['sms']) != 0:
             smert = list(db['sms'])[len(db['sms'])-1]
