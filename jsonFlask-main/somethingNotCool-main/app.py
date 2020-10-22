@@ -38,6 +38,18 @@ except:
         db = json.load(readDB)
     print('created')
 
+@app.route('/edit', methods = ['POST', 'GET'])
+def edit():
+    # if request.method == 'POST':
+    smisol = request.args.to_dict()   # request.args[f'{list(smisol)[0]}']
+    print(smisol)
+    db['sms'][f'{request.args[f"{list(smisol)[0]}"]}']['content'] = 'edited'
+    db['sms'][f'{request.args[f"{list(smisol)[0]}"]}']['edited'] = 1
+    commit(db)
+
+
+    return redirect('/')
+
 @app.route('/delete', methods = ['POST', 'GET'])
 def delete():
     # if request.method == 'POST':
@@ -138,7 +150,7 @@ def index():
         sms_content = request.form['content']
         sms_user = user[f'{session[0]}{session[1]}']
         
-        if sms_content == '' or sms_user == '' or len(sms_content) >= 201 : return redirect('/')
+        if sms_content == '' or sms_user == '' or len(sms_content) >= 2001 : return redirect('/')
 
         # spaces = 0
         # for i in sms_content:
@@ -156,7 +168,7 @@ def index():
             smert = list(db['sms'])[len(db['sms'])-1]
         else:
             smert = -1
-        db['sms'][f'{int(smert) + 1}'] = {'userIP': f'{session[0]}{session[1]}','content': sms_content, 'username': f'{db["users"][f"{session[0]}{session[1]}"]}', 'date_created': f'{str(datetime.now())[:19:]}'}
+        db['sms'][f'{int(smert) + 1}'] = {'userIP': f'{session[0]}{session[1]}','content': sms_content, 'username': f'{db["users"][f"{session[0]}{session[1]}"]}', 'date_created': f'{str(datetime.now())[:19:]}', 'edited': 0}
         commit(db)
         
         return redirect('/')

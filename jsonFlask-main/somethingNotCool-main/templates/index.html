@@ -26,14 +26,28 @@
                     {% if sm.username == mama %}
                    
                         <div id = 'me' class="p-2 px-md-4 mb-3 border-bottom shadow-sm" style="border-bottom-right-radius: 5px ; display: flex;">
-                        <h5 style="text-align: right;" class="p-2 text-dark"> {{ sm.content }} <small><small>{{ sm.username }}</small><form id = 'deleteFOrm{{j}}' action="/delete" method="GET" style="display: inline; float: right; padding-left: 10px;"><input type="text" style="display:none" value="{{j}}" name = 'deleteFOrm{{j}}'><small><a style="text-decoration: none;" href="#" onclick="document.getElementById('deleteFOrm{{j}}').submit();">❌</a></small></form><br><font size = '1px'> {{ sm.date_created }}</font></small></h5>
+                        <h5 style="text-align: right;" class="p-2 text-dark"> {{ sm.content }} <small><small>{{ sm.username }}</small>
+                            
+                            <form id = 'deleteFOrm{{j}}' action="/delete" method="GET" style="display: inline; float: right; padding-left: 10px;">
+                                <input type="text" style="display:none" value="{{j}}" name = 'deleteFOrm{{j}}'>
+                                <small>
+                                    <a style="text-decoration: none;" href="#" onclick="document.getElementById('deleteFOrm{{j}}').submit();">❌</a>
+                                </small>
+                            </form>
+                            <form id = 'editFOrm{{j}}' action="/edit" method="GET" style="display: inline; float: right; padding-left: 10px;">
+                                <input type="text" style="display:none" value="{{j}}" name = 'editFOrm{{j}}'>
+                                <small>
+                                    <a style="text-decoration: none;" href="#" onclick="document.getElementById('editFOrm{{j}}').submit();">🖋</a>
+                                </small>
+                            </form><br><font size = '1px'> {{ sm.date_created }}    {% if sm.edited == 1 %}edited{% endif %}</font></small>
+                        </h5>
                         </div>
                         
                     {% else %}
                     
                         
                         <div id = 'bot' class="p-2 px-md-4 mb-3 border-bottom shadow-sm" style="border-bottom-left-radius: 5px ;display: flex;">
-                        <h5 class="p-2 text-dark"><small><small>{{ sm.username }}</small></small> {{ sm.content }} <br><font size = '1px'> {{ sm.date_created }}</font></h5>
+                        <h5 class="p-2 text-dark"><small><small>{{ sm.username }}</small></small> {{ sm.content }} <br><font size = '1px'> {{ sm.date_created }}   {% if sm.edited == 1 %}edited{% endif %}</font></h5>
                         </div>
 
                     {% endif %}

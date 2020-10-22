@@ -136,13 +136,13 @@
             // document.getElementById('status').innerHTML = `your status ${userStatus}`
             
             document.getElementById('smsinput').oninput = () => {
-                if ((200 - document.getElementById('smsinput').value.length) <= 15){
+                if ((2000 - document.getElementById('smsinput').value.length) <= 15){
 
-                    if ((200 - document.getElementById('smsinput').value.length) < 0){
-                        document.getElementById('pInput').innerHTML = `${200 - document.getElementById('smsinput').value.length}`
+                    if ((2000 - document.getElementById('smsinput').value.length) < 0){
+                        document.getElementById('pInput').innerHTML = `${2000 - document.getElementById('smsinput').value.length}`
                         document.getElementById('pInput').style.color = 'red'
                     } else {
-                        document.getElementById('pInput').innerHTML = `${200 - document.getElementById('smsinput').value.length}`
+                        document.getElementById('pInput').innerHTML = `${2000 - document.getElementById('smsinput').value.length}`
                         document.getElementById('pInput').style.color = 'black'
                     }
 

@@ -1,0 +1,66 @@
+{
+    "users": {
+        "danikdanik": "danik",
+        "vikavita": "vika",
+        "nikitalohnikitaloh": "nikita"
+    },
+    "sms": {
+        "0": {
+            "userIP": "danikdanik",
+            "content": "hi",
+            "username": "danik",
+            "date_created": "2020-10-22 13:45:49"
+        },
+        "1": {
+            "userIP": "danikdanik",
+            "content": "edited",
+            "username": "danik",
+            "date_created": "2020-10-22 13:45:51",
+            "edited": 1
+        },
+        "2": {
+            "userIP": "danikdanik",
+            "content": "mom",
+            "username": "danik",
+            "date_created": "2020-10-22 13:45:52"
+        },
+        "3": {
+            "userIP": "danikdanik",
+            "content": "and dad",
+            "username": "danik",
+            "date_created": "2020-10-22 13:45:54"
+        },
+        "4": {
+            "userIP": "danikdanik",
+            "content": "net",
+            "username": "danik",
+            "date_created": "2020-10-22 15:58:20"
+        },
+        "6": {
+            "userIP": "vikavita",
+            "content": "vika",
+            "username": "vika",
+            "date_created": "2020-10-22 15:59:27"
+        },
+        "7": {
+            "userIP": "vikavita",
+            "content": "meme",
+            "username": "vika",
+            "date_created": "2020-10-22 15:59:34"
+        },
+        "12": {
+            "userIP": "nikitalohnikitaloh",
+            "content": "asdasd",
+            "username": "nikita",
+            "date_created": "2020-10-22 16:24:32",
+            "edited": 0
+        },
+        "15": {
+            "userIP": "nikitalohnikitaloh",
+            "content": "asdasd",
+            "username": "nikita",
+            "date_created": "2020-10-22 16:28:50",
+            "edited": 0
+        }
+    }
+}
