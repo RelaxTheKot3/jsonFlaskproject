@@ -191,6 +191,26 @@
             }
 
 
+            editeditedit = (edit, id) => {
+                if (document.getElementById(edit).style.display != 'none') {
+                    return document.getElementById(`edddddddd${id}`).submit()
+
+                } 
+                
+                document.getElementById(edit).style.display = 'block'
+                document.getElementById(edit).focus()
+                document.getElementById(edit).addEventListener("keyup", (event) => {
+
+
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    
+                    document.getElementById(`edddddddd${id}`).submit();
+                }
+                });
+
+            }
+
             document.getElementById('inputButton').onclick = () => {
                 if (document.getElementById('smsSearch').style.display == 'none') {
                     document.getElementById('smsSearch').style.display = 'inline'

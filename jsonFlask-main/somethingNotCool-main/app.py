@@ -40,12 +40,17 @@ except:
 
 @app.route('/edit', methods = ['POST', 'GET'])
 def edit():
-    # if request.method == 'POST':
-    smisol = request.args.to_dict()   # request.args[f'{list(smisol)[0]}']
-    print(smisol)
-    db['sms'][f'{request.args[f"{list(smisol)[0]}"]}']['content'] = 'edited'
-    db['sms'][f'{request.args[f"{list(smisol)[0]}"]}']['edited'] = 1
-    commit(db)
+    # smisol = list(request.args.to_dict() )  # request.args[f'{list(smisol)[0]}']
+    if request.method == 'POST':
+        print(f"{list(request.form.to_dict())[0]}")
+    # print(smisol, request.form[f'{smisol[0]}'])
+        if len(request.form[f"{list(request.form.to_dict())[1]}"]) >= 2001:
+            return redirect('/')
+
+
+        db['sms'][f'{request.form[f"{list(request.form.to_dict())[0]}"]}']['content'] = f'{request.form[f"{list(request.form.to_dict())[1]}"]}'
+        db['sms'][f'{request.form[f"{list(request.form.to_dict())[0]}"]}']['edited'] = 1
+        commit(db)
 
 
     return redirect('/')

@@ -34,10 +34,11 @@
                                     <a style="text-decoration: none;" href="#" onclick="document.getElementById('deleteFOrm{{j}}').submit();">❌</a>
                                 </small>
                             </form>
-                            <form id = 'editFOrm{{j}}' action="/edit" method="GET" style="display: inline; float: right; padding-left: 10px;">
+                            <form id = 'edddddddd{{j}}' action="/edit" method="POST" style="display: inline; float: right; padding-left: 10px;">
                                 <input type="text" style="display:none" value="{{j}}" name = 'editFOrm{{j}}'>
+                                <input type="text" id = 'editedit{{j}}' style="display: none;" name = 'editedit{{j}}'>
                                 <small>
-                                    <a style="text-decoration: none;" href="#" onclick="document.getElementById('editFOrm{{j}}').submit();">🖋</a>
+                                    <a style="text-decoration: none;" href="#" onclick="editeditedit('editedit{{j}}', '{{j}}')">🖋</a>
                                 </small>
                             </form><br><font size = '1px'> {{ sm.date_created }}    {% if sm.edited == 1 %}edited{% endif %}</font></small>
                         </h5>
