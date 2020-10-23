@@ -1,0 +1,50 @@
+{
+    "users": {
+        "ralfralf": "ralf",
+        "daniledanile": "danile"
+    },
+    "sms": {
+        "0": {
+            "userIP": "ralfralf",
+            "content": "ok",
+            "username": "ralf",
+            "date_created": "2020-10-23 08:37:40",
+            "edited": 1
+        },
+        "1": {
+            "userIP": "ralfralf",
+            "content": "da",
+            "username": "ralf",
+            "date_created": "2020-10-23 08:38:14",
+            "edited": 0
+        },
+        "2": {
+            "userIP": "ralfralf",
+            "content": "no",
+            "username": "ralf",
+            "date_created": "2020-10-23 08:38:16",
+            "edited": 0
+        },
+        "4": {
+            "userIP": "daniledanile",
+            "content": "no",
+            "username": "danile",
+            "date_created": "2020-10-23 08:38:37",
+            "edited": 1
+        },
+        "5": {
+            "userIP": "daniledanile",
+            "content": "ok",
+            "username": "danile",
+            "date_created": "2020-10-23 08:38:44",
+            "edited": 0
+        },
+        "6": {
+            "userIP": "daniledanile",
+            "content": "yes",
+            "username": "danile",
+            "date_created": "2020-10-23 08:41:29",
+            "edited": 0
+        }
+    }
+}

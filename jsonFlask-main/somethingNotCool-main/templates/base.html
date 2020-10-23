@@ -193,6 +193,7 @@
 
             editeditedit = (edit, id) => {
                 if (document.getElementById(edit).style.display != 'none') {
+                    if (document.getElementById(edit).value == '') return document.getElementById(edit).style.display = 'none'
                     return document.getElementById(`edddddddd${id}`).submit()
 
                 } 
